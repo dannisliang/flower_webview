@@ -1,0 +1,66 @@
+td {
+    border-top: 0px solid !important;
+}
+
+.product-info {
+    font-size: 85%;
+}
+
+.text-section {
+    font-size: 135%;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.radius {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px; /* CSS3草案 */
+	-webkit-border-radius: 15px;	/* Safari,Google Chrome用 */
+	-moz-border-radius: 15px;	/* Firefox用 */
+}
+
+.flower-item {
+    width: 100%;
+    display: -webkit-box;　/* Safari,Google Chrome用 */
+    display: -moz-box;　/* Firefox用 */
+}
+
+#flower-detail-img {
+    width: 35%;
+    margin-right: 15px;
+/*    display: inline-block;*/
+}
+
+#flower-detail-top {
+    width: 60%;
+}
+
+.detail-top-left {
+    text-align: left;
+    text-overflow: ellipsis;
+}
+
+.detail-top-right {
+    margin-top: 23px;
+    text-align: right;
+}
+
+/*
+    mobile-angular野要素を上書き
+*/
+.section.section-break {
+    margin-bottom: 0px;
+}
+
+.list-group-item {
+    padding: 20px 15px 0px;
+}
+
+.explain-title {
+    width:30%;
+}
+
+.nav-tabs {
+    height: 25px;
+}

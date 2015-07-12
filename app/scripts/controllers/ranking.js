@@ -8,7 +8,7 @@
  * Controller of the vagrantApp
  */
 angular.module('vagrantApp')
-  .controller('AboutCtrl', function () {
+  .controller('RankingCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

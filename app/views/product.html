@@ -1,0 +1,110 @@
+<!--<script src="/dist/js/mobile-angular-ui.gestures.min.js"></script>-->
+<script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.min.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-touch/angular-touch.min.js"></script>
+<script src="bower_components/bootstarp/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.13.0.min.js"></script>
+<script src="bower_components/bootstarp/ui-bootstrap-custom-build/ui-bootstrap-custom-0.13.0.min.js"></script>
+<link rel="stylesheet" href="bower_components/bootstarp/ui-bootstrap-custom-build/ui-bootstrap-custom-0.13.0-csp.css" />
+<link rel="stylesheet" href="styles/product.css">
+
+<div class="navbar navbar-app navbar-absolute-bottom">
+  <div class="btn-group justified">
+    <a href="http://mobileangularui.com/" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i> Docs</a>
+    <a href="https://github.com/mcasimir/mobile-angular-ui" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> Sources</a>
+    <a href="https://github.com/mcasimir/mobile-angular-ui/issues" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar"></i> Issues</a>
+  </div>
+</div>
+
+<div class="scrollable">
+    <div class="scrollable-content"  ng-controller="SelectProductCtrl">
+        <div class="list-group text-center">
+          <div class="list-group-item list-group-item-home media">
+            <div class="media-body" style="margin-top: 50px;">
+                <div class="flower-item">
+                        <!-- 画像① -->
+                        <div id="flower-detail-img">
+                            <img class="radius" ng-src="{{product_info.icon_image}}">
+                        </div>
+                        <div id="flower-detail-top">
+                            <!--Todo 3点リーダーにする-->
+                            <div class="media-heading detail-top-left">{{ product_info.name }}</div>
+                            <div class="media-heading detail-top-left">販売元 {{ product_info.supplier }}</div>
+                            <div class="media-heading detail-top-right">
+                                <button ui-turn-off="modal1" class="btn btn-primary">¥{{product_info.value | number}} 購入</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- tab作成-->
+        <div class="container-fluid section section-break">
+            <ui-state id='activeTab' default='1'></ui-state>
+            <div>
+                <div class="btn-group justified nav-tabs">
+                    <a ui-set="{'activeTab': 1}"
+                        ui-class="{'active': activeTab == 1}" class="btn btn-default">詳細</a>
+                    <a ui-set="{'activeTab': 2}" 
+                        ui-class="{'active': activeTab == 2}" class="btn btn-default">レビュー</a>
+                    <a ui-set="{'activeTab': 3}" 
+                        ui-class="{'active': activeTab == 3}" class="btn btn-default">関連</a>
+                </div>  
+            </div>
+        </div>
+        <!-- 製品写真一覧 横スクロール-->
+        <div class="list-group text-center">
+            <div ng-controller="ProductCapturesCtrl">
+                <div style="height:150px;">
+<!--               <carousel interval="myInterval">-->
+                   <carousel>
+                     <slide ng-repeat="slide in slides" active="slide.active">
+                        <img ng-src="{{slide.image}}" style="margin:auto; width: 100%; height: 100%;">
+                        <div class="carousel-caption">
+                            <h4>Slide {{$index}}</h4>
+                            <p>{{slide.text}}</p>
+                        </div>
+                     </slide>
+                   </carousel>
+                </div>
+            </div>
+        </div>
+        <!-- 説明文 -->
+        <div class="section product-info">
+            <div class="panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        説明
+                    </div>
+                </div>
+                <div class="panel-body">
+                    {{product_info.explain}}
+                </div>
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        情報
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class='table'>
+                        <tbody>
+                            <tr>
+                                <td class='explain-title'>販売元</td>
+                                <td>{{product_info.supplier}}</td>
+                            </tr>
+                            <tr>
+                                <td class='explain-title'>カテゴリ</td>
+                                <td>{{product_info.cateogry}}</td>
+                            </tr>
+                            <tr>
+                                <td class='explain-title'>更新</td>
+                                <td>{{product_info.update_time}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

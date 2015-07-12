@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name vagrantApp.controller:MainCtrl
+ * @name vagrantApp.controller:ProductCtrl
  * @description
- * # MainCtrl
+ * # ProductCtrl
  * Controller of the vagrantApp
  */
 angular.module('vagrantApp')
-    .controller('MainCtrl', function () {
+    .controller('ProductCtrl', function () {
       this.awesomeThings = [
         'HTML5 Boilerplate',
         'AngularJS',
@@ -19,7 +19,36 @@ angular.module('vagrantApp')
         //'ngTouch',
       ];  
     })
-    .controller('EventCtrl', function ($scope) {
+    .controller('SelectProductCtrl', ['$scope', function ($scope) {
+        $scope.product_info = {
+              icon_image: 'http://hibiyakadn.hs.llnwd.net/e1/ito/0000000/0000000092/sb/550_550/6298TH1930_s01.jpg',
+              name: 'カーネーションの花束',
+              explain: '薔薇を1本いかがですか',
+              review_status: 5.0,
+              supplier     : '瀬川フラワーコンサルタント',
+              cateogry     : '花束',
+              value        : 2000,
+              update_time  : '2015-04-30',
+        };
+        $scope.review_list = [
+            {
+                title    : '購入しました',
+                nickname : '瀬川 翔太',
+                purchase_date: '2015-06-01',
+                status   : 4.0,
+                sentence : 'すごい綺麗でよかった'
+            },
+            {
+                title    : '購入しました',
+                nickname : '加島 たくみ',
+                purchase_date: '2015-06-01',
+                status   : 4.0,
+                sentence : 'すごい綺麗でよかった'
+            }
+        ];
+      }]
+    )
+    .controller('ProductCapturesCtrl', function ($scope) {
       $scope.myInterval = 5000;
       var slides = $scope.slides = [];
       /*$scope.addSlide = function() {
@@ -42,103 +71,103 @@ angular.module('vagrantApp')
             ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
         });
       }
-    })
-    .controller('NewBouquetCtrl', function ($scope) {
-      $scope.bouquets = [
-          {
-              image : 'http://hibiyakadn.hs.llnwd.net/e1/ito/0000000/0000000092/sb/550_550/6298TH1930_s01.jpg',
-              name  : 'カーネションの花束',
-              value : 1980,
-              url   : '/#/product/1',
-          },
-          {
-              image : 'http://www.i879.com/image/products/big/112009.jpg',
-              name  : 'ひまわりの花束',
-              value : 980,
-          },
-          {
-              image : 'https://www.flowers-do.jp/imgdb/item_baranohanataba/107-1.jpg',
-              name  : 'バラ尽くし',
-              value : 3980,
-          },
-          {
-              image : 'http://ar-flower.com/wp-content/uploads/2014/10/a43d3055896b8d57b3f48073d8dc2a09.jpg',
-              name : '愛する人へ',
-              value : 5980,
-          },
-      ];
-    })
-    .controller('NewPlantCtrl', function ($scope) {
-      $scope.bouquets = [
-          {
-              image : 'http://www.hanayumi.net/images/p453_1.jpg',
-              name  : 'カーネションの鉢物',
-              value : 1980,
-          },
-          {
-              image : 'http://sakata-tanet.com/img/goods/L/2000197100147.jpg',
-              name  : 'ひまわりの鉢物',
-              value : 980,
-          },
-          {
-              image : 'http://image.rakuten.co.jp/kajoen/cabinet/nae3/img61775391.jpg',
-              name  : 'バラ尽くし',
-              value : 3980,
-          },
-          {
-              image : 'http://www.emono1.jp/img/fshanasho/20070322215644_img1_34.jpg',
-              name : '愛する人へ',
-              value : 5980,
-          },
-      ];
-    })
-    .controller('NewFoliageCtrl', function ($scope) {
-      $scope.bouquets = [
-          {
-              image : 'http://mf8.jp/ky/ky205/001.jpg',
-              name  : '青年の木/ユッカ',
-              value : 1980,
-          },
-          {   image : 'http://storage.kanshin.com/free/img_45/452195/k747750249.jpg',
-              name  : 'ひまわりの鉢物',
-              value : 980,
-          },
-          {
-              image : 'http://www.spiralmarket.com/2008/01/17/img/wood.jpg',
-              name  : 'バラ尽くし',
-              value : 3980,
-          },
-          {
-              image : 'http://photo-chips.com/db/file/IMGP0347(2).JPG',
-              name : '愛する人へ',
-              value : 5980,
-          },
-      ];
-    })
-    .controller('NewCutFlowerCtrl', function ($scope) {
-      $scope.bouquets = [
-          {
-              image : 'http://385r.com/wordpress/wp-content/uploads/2012/06/azi0.jpg',
-              name  : 'あじさい',
-              value : 1980,
-          },
-          {   image : 'http://storage.kanshin.com/free/img_45/452195/k747750249.jpg',
-              name  : 'ひまわりの鉢物',
-              value : 980,
-          },
-          {
-              image : 'https://t.pimg.jp/003/523/630/1/3523630.jpg',
-              name  : '1本の薔薇',
-              value : 3980,
-          },
-          {
-              image : 'http://photo-chips.com/db/file/IMGP0347(2).JPG',
-              name : '愛する人へ',
-              value : 5980,
-          },
-      ];
-    }
-);
+    });
+//    .controller('NewBouquetCtrl', function ($scope) {
+//      $scope.bouquets = [
+//          {
+//              image : 'http://hibiyakadn.hs.llnwd.net/e1/ito/0000000/0000000092/sb/550_550/6298TH1930_s01.jpg',
+//              name  : 'カーネションの花束',
+//              value : 1980,
+//              url   : '/#/product/1',
+//          },
+//          {
+//              image : 'http://www.i879.com/image/products/big/112009.jpg',
+//              name  : 'ひまわりの花束',
+//              value : 980,
+//          },
+//          {
+//              image : 'https://www.flowers-do.jp/imgdb/item_baranohanataba/107-1.jpg',
+//              name  : 'バラ尽くし',
+//              value : 3980,
+//          },
+//          {
+//              image : 'http://ar-flower.com/wp-content/uploads/2014/10/a43d3055896b8d57b3f48073d8dc2a09.jpg',
+//              name : '愛する人へ',
+//              value : 5980,
+//          },
+//      ];
+//    })
+//    .controller('NewPlantCtrl', function ($scope) {
+//      $scope.bouquets = [
+//          {
+//              image : 'http://www.hanayumi.net/images/p453_1.jpg',
+//              name  : 'カーネションの鉢物',
+//              value : 1980,
+//          },
+//          {
+//              image : 'http://sakata-tanet.com/img/goods/L/2000197100147.jpg',
+//              name  : 'ひまわりの鉢物',
+//              value : 980,
+//          },
+//          {
+//              image : 'http://image.rakuten.co.jp/kajoen/cabinet/nae3/img61775391.jpg',
+//              name  : 'バラ尽くし',
+//              value : 3980,
+//          },
+//          {
+//              image : 'http://www.emono1.jp/img/fshanasho/20070322215644_img1_34.jpg',
+//              name : '愛する人へ',
+//              value : 5980,
+//          },
+//      ];
+//    })
+//    .controller('NewFoliageCtrl', function ($scope) {
+//      $scope.bouquets = [
+//          {
+//              image : 'http://mf8.jp/ky/ky205/001.jpg',
+//              name  : '青年の木/ユッカ',
+//              value : 1980,
+//          },
+//          {   image : 'http://storage.kanshin.com/free/img_45/452195/k747750249.jpg',
+//              name  : 'ひまわりの鉢物',
+//              value : 980,
+//          },
+//          {
+//              image : 'http://www.spiralmarket.com/2008/01/17/img/wood.jpg',
+//              name  : 'バラ尽くし',
+//              value : 3980,
+//          },
+//          {
+//              image : 'http://photo-chips.com/db/file/IMGP0347(2).JPG',
+//              name : '愛する人へ',
+//              value : 5980,
+//          },
+//      ];
+//    })
+//    .controller('NewCutFlowerCtrl', function ($scope) {
+//      $scope.bouquets = [
+//          {
+//              image : 'http://385r.com/wordpress/wp-content/uploads/2012/06/azi0.jpg',
+//              name  : 'あじさい',
+//              value : 1980,
+//          },
+//          {   image : 'http://storage.kanshin.com/free/img_45/452195/k747750249.jpg',
+//              name  : 'ひまわりの鉢物',
+//              value : 980,
+//          },
+//          {
+//              image : 'https://t.pimg.jp/003/523/630/1/3523630.jpg',
+//              name  : '1本の薔薇',
+//              value : 3980,
+//          },
+//          {
+//              image : 'http://photo-chips.com/db/file/IMGP0347(2).JPG',
+//              name : '愛する人へ',
+//              value : 5980,
+//          },
+//      ];
+//    }
+//);
 
 // 
 // You can configure ngRoute as always, but to take advantage of SharedState location

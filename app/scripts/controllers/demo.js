@@ -1,167 +1,42 @@
-'use strict';
-
-/**
- * @ngdoc function
- * @name vagrantApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the vagrantApp
- */
-angular.module('vagrantApp')
-    .controller('MainCtrl', function () {
-      this.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma',
-        'ngRoute',
-        'mobile-angular-ui',
-        'mobile-angular-ui.gestures',
-        //'ngTouch',
-      ];  
-    })
-    .controller('EventCtrl', function ($scope) {
-      $scope.myInterval = 5000;
-      var slides = $scope.slides = [];
-      /*$scope.addSlide = function() {
-        slides.push({
-          image: 'http://organic-naturalife.com/wp-content/uploads/2014/05/0a11f1164a932e9e8d6282c7a1ae0239.jpg',
-          text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-            ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
-        });
-      };*/
-      var event_image = [];
-      event_image.push('http://www.fleurir-oasis.com/images/material/banner01.jpg');
-      event_image.push('http://ic4-a.dena.ne.jp/mi/gr/114/imgr-a.dena.ne.jp/exr8/mbspe/4817743/42/48177431_A.jpg');
-      event_image.push('http://www.hanatown.net/eyecatch_img/left/flower_arrangement.jpg');
-      event_image.push('http://kenya-rose.com/wp-content/uploads/2014/10/%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%E3%81%AE%E8%8A%B1%E5%B1%8B%E3%83%90%E3%83%8A%E3%83%BC.jpg');
-      for (var i=0; i<4; i++) {
-        //$scope.addSlide();
-        $scope = slides.push({
-          image: event_image[i],
-          text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-            ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
-        });
-      }
-    })
-    .controller('NewBouquetCtrl', function ($scope) {
-      $scope.bouquets = [
-          {
-              image : 'http://hibiyakadn.hs.llnwd.net/e1/ito/0000000/0000000092/sb/550_550/6298TH1930_s01.jpg',
-              name  : 'カーネションの花束',
-              value : 1980,
-              url   : '/#/product/1',
-          },
-          {
-              image : 'http://www.i879.com/image/products/big/112009.jpg',
-              name  : 'ひまわりの花束',
-              value : 980,
-          },
-          {
-              image : 'https://www.flowers-do.jp/imgdb/item_baranohanataba/107-1.jpg',
-              name  : 'バラ尽くし',
-              value : 3980,
-          },
-          {
-              image : 'http://ar-flower.com/wp-content/uploads/2014/10/a43d3055896b8d57b3f48073d8dc2a09.jpg',
-              name : '愛する人へ',
-              value : 5980,
-          },
-      ];
-    })
-    .controller('NewPlantCtrl', function ($scope) {
-      $scope.bouquets = [
-          {
-              image : 'http://www.hanayumi.net/images/p453_1.jpg',
-              name  : 'カーネションの鉢物',
-              value : 1980,
-          },
-          {
-              image : 'http://sakata-tanet.com/img/goods/L/2000197100147.jpg',
-              name  : 'ひまわりの鉢物',
-              value : 980,
-          },
-          {
-              image : 'http://image.rakuten.co.jp/kajoen/cabinet/nae3/img61775391.jpg',
-              name  : 'バラ尽くし',
-              value : 3980,
-          },
-          {
-              image : 'http://www.emono1.jp/img/fshanasho/20070322215644_img1_34.jpg',
-              name : '愛する人へ',
-              value : 5980,
-          },
-      ];
-    })
-    .controller('NewFoliageCtrl', function ($scope) {
-      $scope.bouquets = [
-          {
-              image : 'http://mf8.jp/ky/ky205/001.jpg',
-              name  : '青年の木/ユッカ',
-              value : 1980,
-          },
-          {   image : 'http://storage.kanshin.com/free/img_45/452195/k747750249.jpg',
-              name  : 'ひまわりの鉢物',
-              value : 980,
-          },
-          {
-              image : 'http://www.spiralmarket.com/2008/01/17/img/wood.jpg',
-              name  : 'バラ尽くし',
-              value : 3980,
-          },
-          {
-              image : 'http://photo-chips.com/db/file/IMGP0347(2).JPG',
-              name : '愛する人へ',
-              value : 5980,
-          },
-      ];
-    })
-    .controller('NewCutFlowerCtrl', function ($scope) {
-      $scope.bouquets = [
-          {
-              image : 'http://385r.com/wordpress/wp-content/uploads/2012/06/azi0.jpg',
-              name  : 'あじさい',
-              value : 1980,
-          },
-          {   image : 'http://storage.kanshin.com/free/img_45/452195/k747750249.jpg',
-              name  : 'ひまわりの鉢物',
-              value : 980,
-          },
-          {
-              image : 'https://t.pimg.jp/003/523/630/1/3523630.jpg',
-              name  : '1本の薔薇',
-              value : 3980,
-          },
-          {
-              image : 'http://photo-chips.com/db/file/IMGP0347(2).JPG',
-              name : '愛する人へ',
-              value : 5980,
-          },
-      ];
-    }
-);
+// 
+// Here is how to define your module 
+// has dependent on mobile-angular-ui
+// 
+var app = angular.module('MobileAngularUiExamples', [
+  'ngRoute',
+  'mobile-angular-ui',
+  
+  // touch/drag feature: this is from 'mobile-angular-ui.gestures.js'
+  // it is at a very beginning stage, so please be careful if you like to use
+  // in production. This is intended to provide a flexible, integrated and and 
+  // easy to use alternative to other 3rd party libs like hammer.js, with the
+  // final pourpose to integrate gestures into default ui interactions like 
+  // opening sidebars, turning switches on/off ..
+  'mobile-angular-ui.gestures'
+]);
 
 // 
 // You can configure ngRoute as always, but to take advantage of SharedState location
 // feature (i.e. close sidebar on backbutton) you should setup 'reloadOnSearch: false' 
 // in order to avoid unwanted routing.
 // 
-angular.module('vagrantApp').config(function($routeProvider) {
-  $routeProvider.when('/',              {templateUrl: 'views/main.html', reloadOnSearch: false});
-//  $routeProvider.when('/scroll',        {templateUrl: 'scroll.html', reloadOnSearch: false}); 
-//  $routeProvider.when('/toggle',        {templateUrl: 'toggle.html', reloadOnSearch: false}); 
-//  $routeProvider.when('/tabs',          {templateUrl: 'tabs.html', reloadOnSearch: false}); 
-//  $routeProvider.when('/accordion',     {templateUrl: 'accordion.html', reloadOnSearch: false}); 
-//  $routeProvider.when('/overlay',       {templateUrl: 'overlay.html', reloadOnSearch: false}); 
-//  $routeProvider.when('/forms',         {templateUrl: 'forms.html', reloadOnSearch: false});
-//  $routeProvider.when('/dropdown',      {templateUrl: 'dropdown.html', reloadOnSearch: false});
-//  $routeProvider.when('/drag',          {templateUrl: 'drag.html', reloadOnSearch: false});
-//  $routeProvider.when('/carousel',      {templateUrl: 'carousel.html', reloadOnSearch: false});
+app.config(function($routeProvider) {
+  $routeProvider.when('/',              {templateUrl: 'home.html', reloadOnSearch: false});
+  $routeProvider.when('/scroll',        {templateUrl: 'scroll.html', reloadOnSearch: false}); 
+  $routeProvider.when('/toggle',        {templateUrl: 'toggle.html', reloadOnSearch: false}); 
+  $routeProvider.when('/tabs',          {templateUrl: 'tabs.html', reloadOnSearch: false}); 
+  $routeProvider.when('/accordion',     {templateUrl: 'accordion.html', reloadOnSearch: false}); 
+  $routeProvider.when('/overlay',       {templateUrl: 'overlay.html', reloadOnSearch: false}); 
+  $routeProvider.when('/forms',         {templateUrl: 'forms.html', reloadOnSearch: false});
+  $routeProvider.when('/dropdown',      {templateUrl: 'dropdown.html', reloadOnSearch: false});
+  $routeProvider.when('/drag',          {templateUrl: 'drag.html', reloadOnSearch: false});
+  $routeProvider.when('/carousel',      {templateUrl: 'carousel.html', reloadOnSearch: false});
 });
 
 //
 // `$drag` example: drag to dismiss
 //
-angular.module('vagrantApp').directive('dragToDismiss', function($drag, $parse, $timeout){
+app.directive('dragToDismiss', function($drag, $parse, $timeout){
   return {
     restrict: 'A',
     compile: function(elem, attrs) {
@@ -209,7 +84,7 @@ angular.module('vagrantApp').directive('dragToDismiss', function($drag, $parse, 
 // Another `$drag` usage example: this is how you could create 
 // a touch enabled "deck of cards" carousel. See `carousel.html` for markup.
 //
-angular.module('vagrantApp').directive('carousel2', function(){
+app.directive('carousel', function(){
   return {
     restrict: 'C',
     scope: {},
@@ -236,8 +111,7 @@ angular.module('vagrantApp').directive('carousel2', function(){
   };
 });
 
-angular.module('vagrantApp').directive('carouselItem', function($drag) {
-    
+app.directive('carouselItem', function($drag) {
   return {
     restrict: 'C',
     require: '^carousel',
@@ -312,7 +186,7 @@ angular.module('vagrantApp').directive('carouselItem', function($drag) {
 // For this trivial demo we have just a unique MainController 
 // for everything
 //
-angular.module('vagrantApp').controller('MainController', function($rootScope, $scope){
+app.controller('MainController', function($rootScope, $scope){
 
   // User agent displayed in home page
   $scope.userAgent = navigator.userAgent;
@@ -401,4 +275,3 @@ angular.module('vagrantApp').controller('MainController', function($rootScope, $
     }
   };
 });
-
