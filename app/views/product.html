@@ -48,62 +48,78 @@
                         ui-class="{'active': activeTab == 2}" class="btn btn-default">レビュー</a>
                     <a ui-set="{'activeTab': 3}" 
                         ui-class="{'active': activeTab == 3}" class="btn btn-default">関連</a>
-                </div>  
+                </div>
             </div>
-        </div>
-        <!-- 製品写真一覧 横スクロール-->
-        <div class="list-group text-center">
-            <div ng-controller="ProductCapturesCtrl">
-                <div style="height:150px;">
-<!--               <carousel interval="myInterval">-->
-                   <carousel>
-                     <slide ng-repeat="slide in slides" active="slide.active">
-                        <img ng-src="{{slide.image}}" style="margin:auto; width: 100%; height: 100%;">
-                        <div class="carousel-caption">
-                            <h4>Slide {{$index}}</h4>
-                            <p>{{slide.text}}</p>
+            
+            <div ui-if="activeTab == 1">
+                <!-- 製品写真一覧 横スクロール-->
+                <div class="list-group text-center">
+                    <div ng-controller="ProductCapturesCtrl">
+                        <div style="height:150px; margin-top: 10px;">
+        <!--               <carousel interval="myInterval">-->
+                           <carousel>
+                             <slide ng-repeat="slide in slides" active="slide.active">
+                                <img ng-src="{{slide.image}}" style="margin:auto; width: 100%; height: 100%;">
+                                <div class="carousel-caption">
+                                    <h4>Slide {{$index}}</h4>
+                                    <p>{{slide.text}}</p>
+                                </div>
+                             </slide>
+                           </carousel>
                         </div>
-                     </slide>
-                   </carousel>
+                    </div>
+                </div>
+                <!-- 説明文 -->
+                <div class="section product-info">
+                    <div class="panel-group">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                説明
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            {{product_info.explain}}
+                        </div>
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                情報
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class='table'>
+                                <tbody>
+                                    <tr>
+                                        <td class='explain-title'>販売元</td>
+                                        <td>{{product_info.supplier}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='explain-title'>カテゴリ</td>
+                                        <td>{{product_info.cateogry}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='explain-title'>更新</td>
+                                        <td>{{product_info.update_time}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- 説明文 -->
-        <div class="section product-info">
-            <div class="panel-group">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        説明
+            <div ui-if="activeTab == 2">
+                <h4 style="margin-top:20px; margin-bottom: 0px;">評価とレビュー</h4>
+                <div ng-repeat="review in review_list" class="list-group">
+                    <div class="list-group-item">
+                        {{$index+1}}. {{review.title}}<br>
+                        ☆{{review.status}} {{review.nickname}} - {{review.purchase_date}}<br>
+                        {{review.sentence}}
                     </div>
                 </div>
-                <div class="panel-body">
-                    {{product_info.explain}}
-                </div>
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        情報
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <table class='table'>
-                        <tbody>
-                            <tr>
-                                <td class='explain-title'>販売元</td>
-                                <td>{{product_info.supplier}}</td>
-                            </tr>
-                            <tr>
-                                <td class='explain-title'>カテゴリ</td>
-                                <td>{{product_info.cateogry}}</td>
-                            </tr>
-                            <tr>
-                                <td class='explain-title'>更新</td>
-                                <td>{{product_info.update_time}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-              </div>
+            </div>
+            <div ui-if="activeTab == 3">
+              関連
             </div>
         </div>
     </div>
