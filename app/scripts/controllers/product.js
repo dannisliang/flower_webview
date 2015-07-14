@@ -44,6 +44,20 @@ angular.module('vagrantApp')
                 purchase_date: '2015-06-01',
                 status   : 4.0,
                 sentence : 'すごい綺麗でよかった'
+            },
+            {
+                title    : '購入しました',
+                nickname : '加島 たくみ',
+                purchase_date: '2015-06-03',
+                status   : 4.0,
+                sentence : 'すごい綺麗でよかった'
+            },
+            {
+                title    : '購入しました',
+                nickname : '加島 たくみ',
+                purchase_date: '2015-06-05',
+                status   : 4.0,
+                sentence : 'すごい綺麗でよかった'
             }
         ];
       }]

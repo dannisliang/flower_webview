@@ -118,8 +118,14 @@
                     </div>
                 </div>
             </div>
-            <div ui-if="activeTab == 3">
-              関連
+            <div ui-if="activeTab == 3" ng-controller="NewPlantCtrl">
+                <h4 style="margin-top:20px; margin-bottom: 0px;">関連</h4>
+                <div ng-repeat="review in bouquets" class="list-group">
+                    <div class="list-group-item">
+                        {{$index+1}}. {{review.name}}  ¥{{review.value|number}}<br>
+                        <div style="width:150px; height:150px;"><img ng-src="{{review.image}}"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
