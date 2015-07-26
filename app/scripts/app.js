@@ -65,6 +65,9 @@ angular
       .when('/address/:user_id', {
         templateUrl: 'views/address.html',
       })
+      .when('/modal1', {
+        templateUrl: 'views/modal1.html',
+      })
       .otherwise({
         redirectTo: '/'
       });

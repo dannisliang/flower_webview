@@ -286,8 +286,6 @@ FastClick.prototype.sendClick = function(targetElement, event) {
 	if (document.activeElement && document.activeElement !== targetElement) {
 		document.activeElement.blur();
 	}
-console.log(event);
-
 	touch = event.changedTouches[0];
 
 	// Synthesise a click event, with an extra attribute so it can be tracked

@@ -1,4 +1,6 @@
-
+<div ui-content-for="title">
+  <span>アプリ名(フローレス)</span>
+</div>
 <div class="scrollable">
     <div class="scrollable-content">
       <div class="list-group" ui-turn-off='uiSidebarLeft' style="margin-top:50px;">
@@ -9,7 +11,7 @@
           <a class="list-group-item" href="#/tabs">観葉植物 <i class="fa fa-chevron-right pull-right"></i></a>
           <a class="list-group-item" href="#/accordion">切り花<i class="fa fa-chevron-right pull-right"></i></a>
       </div>
-      <div class="list-group" ng-controller="UserCtrl">
+      <div class="list-group" ng-controller="UserInfoCtrl">
           <div class="list-group-item"><span class="label label-danger">アカウント情報</span></div>
           <a class="list-group-item" href="#/logout/{{user_info.user_id}}">ログアウト : {{user_info.email}}<i class="fa fa-chevron-right pull-right"></i></a>
           <a class="list-group-item" href="#/user/{{user_info.user_id}}">登録情報<i class="fa fa-chevron-right pull-right"></i></a>

@@ -56,16 +56,19 @@ angular.module('vagrantApp')
               image : 'http://www.i879.com/image/products/big/112009.jpg',
               name  : 'ひまわりの花束',
               value : 980,
+              url   : '/#/product/1',
           },
           {
               image : 'https://www.flowers-do.jp/imgdb/item_baranohanataba/107-1.jpg',
               name  : 'バラ尽くし',
               value : 3980,
+              url   : '/#/product/1',
           },
           {
               image : 'http://ar-flower.com/wp-content/uploads/2014/10/a43d3055896b8d57b3f48073d8dc2a09.jpg',
               name : '愛する人へ',
               value : 5980,
+              url   : '/#/product/1',
           },
       ];
     })
@@ -75,11 +78,13 @@ angular.module('vagrantApp')
               image : 'http://www.hanayumi.net/images/p453_1.jpg',
               name  : 'カーネションの鉢物',
               value : 1980,
+              url   : '/#/product/1',
           },
           {
               image : 'http://sakata-tanet.com/img/goods/L/2000197100147.jpg',
               name  : 'ひまわりの鉢物',
               value : 980,
+              url   : '/#/product/1',
           },
           {
               image : 'http://image.rakuten.co.jp/kajoen/cabinet/nae3/img61775391.jpg',
@@ -90,6 +95,7 @@ angular.module('vagrantApp')
               image : 'http://www.emono1.jp/img/fshanasho/20070322215644_img1_34.jpg',
               name : '愛する人へ',
               value : 5980,
+              url   : '/#/product/1',
           },
       ];
     })
@@ -99,6 +105,7 @@ angular.module('vagrantApp')
               image : 'http://mf8.jp/ky/ky205/001.jpg',
               name  : '青年の木/ユッカ',
               value : 1980,
+              url   : '/#/product/1',
           },
           {   image : 'http://storage.kanshin.com/free/img_45/452195/k747750249.jpg',
               name  : 'ひまわりの鉢物',
@@ -108,11 +115,13 @@ angular.module('vagrantApp')
               image : 'http://www.spiralmarket.com/2008/01/17/img/wood.jpg',
               name  : 'バラ尽くし',
               value : 3980,
+              url   : '/#/product/1',
           },
           {
               image : 'http://photo-chips.com/db/file/IMGP0347(2).JPG',
               name : '愛する人へ',
               value : 5980,
+              url   : '/#/product/1',
           },
       ];
     })
@@ -122,31 +131,28 @@ angular.module('vagrantApp')
               image : 'http://385r.com/wordpress/wp-content/uploads/2012/06/azi0.jpg',
               name  : 'あじさい',
               value : 1980,
+              url   : '/#/product/1',
           },
           {   image : 'http://storage.kanshin.com/free/img_45/452195/k747750249.jpg',
               name  : 'ひまわりの鉢物',
               value : 980,
+              url   : '/#/product/1',
           },
           {
               image : 'https://t.pimg.jp/003/523/630/1/3523630.jpg',
               name  : '1本の薔薇',
               value : 3980,
+              url   : '/#/product/1',
           },
           {
               image : 'http://photo-chips.com/db/file/IMGP0347(2).JPG',
               name : '愛する人へ',
               value : 5980,
+              url   : '/#/product/1',
           },
       ];
-    })
-    .controller('UserCtrl', function ($scope) {
-      $scope.user_info = {
-          user_id : 1,
-          user_name : 'segasho',
-          email     : 'syo_sega04@yahoo.co.jp',
-      }
-    }
-);
+    });
+
 
 // 
 // You can configure ngRoute as always, but to take advantage of SharedState location
@@ -159,7 +165,7 @@ angular.module('vagrantApp').config(function($routeProvider) {
 //  $routeProvider.when('/toggle',        {templateUrl: 'toggle.html', reloadOnSearch: false}); 
 //  $routeProvider.when('/tabs',          {templateUrl: 'tabs.html', reloadOnSearch: false}); 
 //  $routeProvider.when('/accordion',     {templateUrl: 'accordion.html', reloadOnSearch: false}); 
-//  $routeProvider.when('/overlay',       {templateUrl: 'overlay.html', reloadOnSearch: false}); 
+//  $routeProvider.when('/overlay',       {templateUrl: 'views/overlay.html', reloadOnSearch: false}); 
 //  $routeProvider.when('/forms',         {templateUrl: 'forms.html', reloadOnSearch: false});
 //  $routeProvider.when('/dropdown',      {templateUrl: 'dropdown.html', reloadOnSearch: false});
 //  $routeProvider.when('/drag',          {templateUrl: 'drag.html', reloadOnSearch: false});
