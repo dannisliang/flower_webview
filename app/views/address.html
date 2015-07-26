@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8" /></head>
+<body>
+<div ng-app="vagrantApp" ng-controller="scrollCtrl">
+<form name="form" novalidate>
+  <h1 id="top">TOP</h1>
+  <div>
+    <ul>
+      <li><a href="" ng-click="innerLink('name1')">name1</a></li>
+      <li><a href="" ng-click="innerLink('id1')">id1</a></li>
+      <li><a href="" ng-click="innerLink('name2')">name2</a></li>
+      <li><a href="" ng-click="innerLink('id2')">id2</a></li>
+    </ul>
+  </div>
+  <div>
+    <p style="position:relative;top:1500px;"><a name="name1"></a>name1<a href="" ng-click="innerLink('top')">TOP</a></p>
+    <p style="position:relative;top:2500px;"><span id="id1"></span>id1<a href="" ng-click="innerLink('top')">TOP</a></p>
+    <p style="position:relative;top:3500px;"><a name="name2"></a>name1<a href="" ng-click="innerLink('top')">TOP</a></p>
+    <p style="position:relative;top:4500px;"><span id="id2"></span>id2<a href="" ng-click="innerLink('top')">TOP</a></p>
+  </div>
+</form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+<script>
+(function(){
+
+// jQuery required
+var smoothScroll = function(elementOrName){
+  var element = {'true':$('*[name='+elementOrName+'],'+
+                          '#'+elementOrName).eq(0),
+                 'false':elementOrName}[typeof elementOrName === 'string'];
+  if(!element){
+    return;
+  }
+  if(!element.offset){
+    element = $(element);
+  }
+  if(!element.offset){
+    return;
+  }
+  var top = Math.max(0, element.offset().top - ($(window).height()/8));
+  $('html,body').
+  animate(
+    {'scrollTop': top},
+    'slow'
+  );
+};
+
+angular.module('commonUI',[])
+.factory('uiUtils',[function(){
+  return {
+    smoothScroll:smoothScroll
+  };
+}])
+;
+})();
+
+var app = angular.module('vagrantApp', ['commonUI']);
+app.controller('scrollCtrl',['$scope','uiUtils',function ($scope,uiUtils) {
+  $scope.innerLink = uiUtils.smoothScroll;
+}]);
+
+</script>
+</body></html>

@@ -16,11 +16,12 @@ angular.module('vagrantApp')
         'ngRoute',
         'mobile-angular-ui',
         'mobile-angular-ui.gestures',
-        //'ngTouch',
-      ];  
+        'ngTouch',
+      ];
     })
     .controller('EventCtrl', function ($scope) {
       $scope.myInterval = 5000;
+      
       var slides = $scope.slides = [];
       /*$scope.addSlide = function() {
         slides.push({
@@ -137,6 +138,13 @@ angular.module('vagrantApp')
               value : 5980,
           },
       ];
+    })
+    .controller('UserCtrl', function ($scope) {
+      $scope.user_info = {
+          user_id : 1,
+          user_name : 'segasho',
+          email     : 'syo_sega04@yahoo.co.jp',
+      }
     }
 );
 

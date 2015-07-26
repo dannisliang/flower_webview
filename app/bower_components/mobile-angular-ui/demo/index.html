@@ -21,13 +21,13 @@
     <script src="demo.js"></script>
   </head>
 
-  <body 
-    ng-app="MobileAngularUiExamples" 
+  <body
+    ng-app="MobileAngularUiExamples"
     ng-controller="MainController"
     >
 
     <!-- Sidebars -->
-    <div ng-include="'sidebar.html'" 
+    <div ng-include="'sidebar.html'"
             ui-track-as-search-param='true'
             class="sidebar sidebar-left"></div>
 
@@ -37,7 +37,6 @@
     <div class="app" ng-swipe-right='Ui.turnOn("uiSidebarLeft")' ng-swipe-left='Ui.turnOff("uiSidebarLeft")'>
 
       <!-- Navbars -->
-
       <div class="navbar navbar-app navbar-absolute-top">
         <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
           Mobile Angular UI 

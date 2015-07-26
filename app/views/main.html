@@ -1,10 +1,3 @@
-
-<!--<script src="/dist/js/mobile-angular-ui.gestures.min.js"></script>-->
-<script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.min.js"></script>
-<script src="bower_components/angular-touch/angular-touch.js"></script>
-<script src="bower_components/angular-touch/angular-touch.min.js"></script>
-<script src="bower_components/bootstarp/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.13.0.min.js"></script>
-<script src="bower_components/bootstarp/ui-bootstrap-custom-build/ui-bootstrap-custom-0.13.0.min.js"></script>
 <link rel="stylesheet" href="bower_components/bootstarp/ui-bootstrap-custom-build/ui-bootstrap-custom-0.13.0-csp.css" />
 <link rel="stylesheet" href="styles/main.css">
 
@@ -18,6 +11,7 @@
 
 <div class="scrollable">
   <div class="scrollable-content">
+   
     <div class="list-group text-center">
         <div ng-controller="EventCtrl">
          <div style="margin-top: 50px; height:150px;">
@@ -42,14 +36,14 @@
         <div class="media-body">
             <div class="btn-group section-group" ng-controller="NewBouquetCtrl">
                 <div ng-repeat="item in bouquets" class="flower-item">
+                    <!-- 画像① -->
                     <a href="{{item.url}}">
-                        <!-- 画像① -->
                         <img class="radius" ng-src="{{item.image}}">
                         <div class="flower-detail" style="margin-top: 10px;">
                             <h6 class="media-heading">{{item.name}}</h3>
                             <h6 class="media-heading">¥{{item.value | number}}</h3>
                         </div>
-                   </a>
+                    </a>
                 </div>
             </div>
         </div>

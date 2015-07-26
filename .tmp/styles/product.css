@@ -34,16 +34,29 @@ td {
 
 #flower-detail-top {
     width: 60%;
+    display: -webkit-box;　/* Safari,Google Chrome用 */
+    display: -moz-box;　/* Firefox用 */
+    -moz-box-orient:vertical;
+    -webkit-box-orient:vertical;
+    box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-box-pack: justify;
+    -o-box-pack: justify;
+    -ms-box-pack: justify; 
 }
 
 .detail-top-left {
     text-align: left;
     text-overflow: ellipsis;
+    margin-bottom: 0px;
+    -webkit-box-flex: 1;
 }
 
 .detail-top-right {
-    margin-top: 23px;
     text-align: right;
+    position: relative;
+    bottom: 0px;
+    right: 0px;
 }
 
 /*
@@ -63,4 +76,9 @@ td {
 
 .nav-tabs {
     height: 25px;
+}
+
+.scroll-img {
+    margin-right: 15px;
+    margin-left: 0px !important;
 }

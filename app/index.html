@@ -24,42 +24,24 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-<!--      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <a class="navbar-brand" href="#/">vagrant</a>
-          </div>
-
-          <div class="collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>-->
-      
+        
       <div class="navbar navbar-app navbar-absolute-top">
         <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
           おすすめ (動的)
         </div>
-        <div class="btn-group pull-left">
-          <div ui-toggle="uiSidebarLeft" class="btn">
-            <a href="/#/category">
+        <a href="/#/category">
+          <div class="btn-group pull-left">
+            <div class="btn">
                 <i class="fa fa-bars"></i>
-            </a>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="btn-group pull-right" ui-yield-to="navbarAction">
           <div ui-toggle="uiSidebarRight" class="btn">
             <i class="fa fa-briefcase"></i>
           </div>
         </div>
       </div>
-      
     </div>
 
     
@@ -67,11 +49,11 @@
         <div ng-view=""></div>
     </div>
 
-<!--    <div class="footer">
+    <div class="footer">
       <div class="container">
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
-    </div>-->
+    </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -89,7 +71,9 @@
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
+<!--    <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>-->
+    <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.js"></script>
+    <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.js"></script>
     
 <!--    <script src="bower_components/bootstarp/ui-bootstrap-custom-build/ui-bootstrap-custom-0.13.0.min.js"></script>-->
     <script src="bower_components/bootstarp/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.13.0.min.js"></script>
@@ -103,5 +87,8 @@
     <script src="scripts/controllers/category.js"></script>
     <script src="scripts/controllers/product.js"></script>
     <!-- endbuild -->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="scripts/controllers/portfolio.pack.min.js"></script>
 </body>
 </html>

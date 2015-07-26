@@ -46,6 +46,25 @@ angular
         controller: 'ProductCtrl',
         controllerAs: 'product'
       })
+      .when('/user/:user_id', {
+        templateUrl: 'views/user.html',
+//        controller: 'WishCtrl',
+//        controllerAs: 'wish'
+      })
+      .when('/logout/:user_id', {
+        templateUrl: 'views/logout.html',
+//        controller: 'WishCtrl',
+//        controllerAs: 'wish'
+      })
+      .when('/orderLog/:user_id', {
+        templateUrl: 'views/orderLog.html',
+//        controller: 'WishCtrl',
+//        controllerAs: 'wish'
+      })
+      //配送先住所
+      .when('/address/:user_id', {
+        templateUrl: 'views/address.html',
+      })
       .otherwise({
         redirectTo: '/'
       });

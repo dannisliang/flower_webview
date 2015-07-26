@@ -286,6 +286,7 @@ FastClick.prototype.sendClick = function(targetElement, event) {
 	if (document.activeElement && document.activeElement !== targetElement) {
 		document.activeElement.blur();
 	}
+console.log(event);
 
 	touch = event.changedTouches[0];
 
@@ -541,9 +542,11 @@ FastClick.prototype.onTouchEnd = function(event) {
 	// is performing a transition or scroll, and has to be re-detected manually. Note that
 	// for this to function correctly, it must be called *after* the event target is checked!
 	// See issue #57; also filed as rdar://13048589 .
+    
+    //deviceIsIOSWithBadTarget = false;
 	if (deviceIsIOSWithBadTarget) {
-		touch = event.changedTouches[0];
 
+		touch = event.changedTouches[0];
 		// In certain cases arguments of elementFromPoint can be negative, so prevent setting targetElement to null
 		targetElement = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset) || targetElement;
 		targetElement.fastClickScrollParent = this.targetElement.fastClickScrollParent;
