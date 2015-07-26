@@ -82,3 +82,8 @@ td {
     margin-right: 15px;
     margin-left: 0px !important;
 }
+
+.section.product-info {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
