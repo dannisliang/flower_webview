@@ -29,10 +29,10 @@ angular.module('vagrantApp')
                   address_name: '瀬川 翔太',
                   address : '東京都 杉並区 宮前4-14-10 シャルマン久我山102号室',
               },
-              {
-                  address_name: '瀬川 賀容子',
-                  address : '香川県 高松市 香川町浅野2977',
-              }
+//              {
+//                  address_name: '瀬川 賀容子',
+//                  address : '香川県 高松市 香川町浅野2977',
+//              }
           ]
       }
     }

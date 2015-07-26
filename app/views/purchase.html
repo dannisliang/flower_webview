@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="styles/purchase.css">
 <div class="modal" ui-if='modal1' ui-state='modal1'>
   <div class="modal-backdrop in"></div>
   <div class="modal-dialog">
@@ -9,13 +10,56 @@
       </div>
       <div class="modal-body" ng-controller="UserInfoCtrl">
           <div class="list-group">
-              <div class="list-group-item">注文連絡先 {{user_info.email}}</div>
-              <div class="list-group-item">
-                  <label for="sel1">配送先</label>
-                  <select class="form-control" id="sel1">
-                      <option ng-repeat="address in user_info.address_info">{{address.address_name}} {{address.address}}</option>
-                  </select>
-              </div>
+            <table class='table'>
+                <tbody>
+                    <tr>
+                        <td class='explain-title'><label>注文連絡先</label></td>
+                        <td>
+                            {{user_info.email}}
+                            <i class="fa fa-chevron-down pull-right"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='explain-title'><label>配送先</label></td>
+                        <td ng-repeat="address in user_info.address_info">
+                            {{address.address_name}}<br>{{address.address}}
+<!--                            <select class="form-control placeholder" id="sel1">-->
+<!--                                <option </option>-->
+<!--                            </select>-->
+                            <i class="fa fa-chevron-down pull-right"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='explain-title'><label>お届け予定</label></td>
+                        <td>8月1日(土) ~ 8月2日(日)</td>
+                    </tr>
+                    <tr>
+                        <td class='explain-title'><label>配送希望時間</label></td>
+                        <td>
+                            <select class="form-control placeholder" id="sel1">
+                                <option>午前中</option>
+                                <option>12:00 ~ 14:00</option>
+                                <option>16:00 ~ 18:00</option>
+                                <option>18:00 ~ 20:00</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='explain-title'><label>希望メッセージ<label></td>
+                        <td>
+                            <textarea style="resize: none; width: 100%; height: 50px;" name="msg" cols=10 rows=4></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='explain-title'><label>配送料</label></td>
+                        <td>¥860</td>
+                    </tr>
+                    <tr>
+                        <td class='explain-title'><label>合計</label></td>
+                        <td>¥2,860</td>
+                    </tr>
+                </tbody>
+            </table>
           </div>
       </div>
       <div class="modal-footer">
