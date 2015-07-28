@@ -19,9 +19,17 @@ angular.module('vagrantApp')
         'ngTouch',
       ];
     })
+    .controller('ProductScroll', function($scope, $element) {
+        $($element).bxSlider({
+            minSlides: 3,
+            maxSlides: 4,
+            slideWidth: 170,
+            slideMargin: 10
+        });
+    })
     .controller('EventCtrl', function ($scope) {
-      $scope.myInterval = 5000;
       
+      $scope.myInterval = 5000;
       var slides = $scope.slides = [];
       /*$scope.addSlide = function() {
         slides.push({

@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="bower_components/bootstarp/ui-bootstrap-custom-build/ui-bootstrap-custom-0.13.0-csp.css" />
 <link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="lib/bxslider/jquery.bxslider.css" />
 
 <!--<div class="navbar navbar-app navbar-absolute-bottom">
   <div class="btn-group justified">
@@ -30,21 +31,31 @@
     <!-- ベスト新着 花束 -->
    <div class="list-group text-center">
       <div class="list-group-item list-group-item-home media">
-        <div class="text-section">
-          <i class="fa feature-icon">ベスト新着 花束 </i>
+        <div class="text-section ">
+          <div>
+            <i class="fa feature-icon">ベスト新着 花束 </i>
+          </div>
+          <div class="all-select">
+            <a href="" style="text-align: right; font-size: 12px;">
+             全て見る <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
         </div>
         <div class="media-body">
             <div class="btn-group section-group" ng-controller="NewBouquetCtrl">
-                <div ng-repeat="item in bouquets" class="flower-item">
-                    <!-- 画像① -->
-                    <a href="{{item.url}}">
-                        <img class="radius" ng-src="{{item.image}}">
-                        <div class="flower-detail" style="margin-top: 10px;">
-                            <h6 class="media-heading">{{item.name}}</h3>
-                            <h6 class="media-heading">¥{{item.value | number}}</h3>
-                        </div>
-                    </a>
-                </div>
+                <ul ng-controller="ProductScroll">
+                    <div ng-repeat="item in bouquets" class="flower-item">
+                        <li>
+                            <a href="{{item.url}}">
+                                <img class="radius" ng-src="{{item.image}}">
+                                <div class="flower-detail" style="margin-top: 10px;">
+                                    <h6 class="media-heading">{{item.name}}</h3>
+                                    <h6 class="media-heading">¥{{item.value | number}}</h3>
+                                </div>
+                            </a>
+                        </li>
+                    </div>
+                </ul>
             </div>
         </div>
       </div>
@@ -52,8 +63,15 @@
     <!-- ベスト新着 鉢物 -->
    <div class="list-group text-center">
       <div class="list-group-item list-group-item-home media">
-        <div class="text-section">
-          <i class="fa feature-icon">ベスト新着 鉢物 </i>
+        <div class="text-section ">
+          <div>
+            <i class="fa feature-icon">ベスト新着 鉢物 </i>
+          </div>
+          <div class="all-select">
+            <a href="" style="text-align: right; font-size: 12px;">
+             全て見る <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
         </div>
         <div class="media-body">
             <div class="btn-group section-group" ng-controller="NewPlantCtrl">
@@ -72,8 +90,15 @@
    <!-- ベスト新着 観葉植物 -->
    <div class="list-group text-center">
       <div class="list-group-item list-group-item-home media">
-        <div class="text-section">
-          <i class="fa feature-icon">ベスト新着 観葉植物 </i>
+        <div class="text-section ">
+          <div>
+            <i class="fa feature-icon">ベスト新着 観葉植物 </i>
+          </div>
+          <div class="all-select">
+            <a href="" style="text-align: right; font-size: 12px;">
+             全て見る <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
         </div>
         <div class="media-body">
             <div class="btn-group section-group" ng-controller="NewFoliageCtrl">
@@ -93,8 +118,15 @@
    <!-- ベスト新着 観葉植物 -->
    <div class="list-group text-center">
       <div class="list-group-item list-group-item-home media">
-        <div class="text-section">
-          <i class="fa feature-icon">ベスト新着 切り花 </i>
+        <div class="text-section ">
+          <div>
+            <i class="fa feature-icon">ベスト新着 切り花 </i>
+          </div>
+          <div class="all-select">
+            <a href="" style="text-align: right; font-size: 12px;">
+             全て見る <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
         </div>
         <div class="media-body">
             <div class="btn-group section-group" ng-controller="NewCutFlowerCtrl">

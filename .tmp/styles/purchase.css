@@ -1,0 +1,16 @@
+table {
+    border-collapse:collapse;
+    margin-bottom: 0px !important;
+}
+
+tr {
+    border-bottom:1px dashed #ccc;
+}
+
+.modal-body {
+    padding: 5px !important;
+}
+
+.modal-dialog {
+    margin-top: 45px !important;
+}

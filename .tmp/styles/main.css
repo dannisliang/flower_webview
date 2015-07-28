@@ -5,6 +5,18 @@ a {
     font-size: 135%;
     margin-bottom: 10px;
     text-align: left;
+    display: -webkit-box;　/* Safari,Google Chrome用 */
+    display: -moz-box;　/* Firefox用 */
+    -moz-box-orient: horizontal;
+    -webkit-box-orient: horizontal;
+}
+
+.all-select {
+    width: 60%;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    text-align: right;
 }
 
 .radius{
@@ -48,3 +60,28 @@ a {
 .section-group {
     zoom: 1;
 }
+
+////////////////
+// bx-alider周り start
+.bx-wrapper {
+    margin-bottom: 0px !important;
+}
+
+.bx-prev {
+    
+}
+
+.bx-viewport {
+    overflow: visible !important;
+}
+
+ul {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.bx-controls-direction {
+    display: none;
+}
+// bx-alider周り end
+////////////////
