@@ -12,11 +12,15 @@ a {
 }
 
 .all-select {
-    width: 60%;
+    width: 40%;
     position: relative;
     top: 0px;
     right: 0px;
     text-align: right;
+}
+
+.section-title {
+    width: 60%;
 }
 
 .radius{

@@ -35,6 +35,9 @@ angular.module('vagrantApp')
         }); 
         p.init();
     })
+    .controller('LineButtonCtrl', function($scope) {
+        new media_line_me.LineButton({"pc":false,"lang":"ja","type":"c"});
+    })
     .controller('SelectProductCtrl', ['$scope', function ($scope) {
         $scope.product_info = {
               icon_image      : 'http://hibiyakadn.hs.llnwd.net/e1/ito/0000000/0000000092/sb/550_550/6298TH1930_s01.jpg',

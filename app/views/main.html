@@ -32,8 +32,8 @@
    <div class="list-group text-center">
       <div class="list-group-item list-group-item-home media">
         <div class="text-section ">
-          <div>
-            <i class="fa feature-icon">ベスト新着 花束 </i>
+          <div class="section-title">
+            <i class="fa feature-icon">ベスト新着 花束</i>
           </div>
           <div class="all-select">
             <a href="" style="text-align: right; font-size: 12px;">
@@ -41,16 +41,16 @@
             </a>
           </div>
         </div>
-        <div class="media-body">
-            <div class="btn-group section-group" ng-controller="NewBouquetCtrl">
-                <ul ng-controller="ProductScroll">
+        <div class="media-body" style="width:100%;">
+            <div class="btn-group section-group" ng-controller="NewBouquetCtrl" style="width:100%;">
+                <ul ng-controller="ProductScroll"  style="width:100%;">
                     <div ng-repeat="item in bouquets" class="flower-item">
                         <li>
                             <a href="{{item.url}}">
                                 <img class="radius" ng-src="{{item.image}}">
                                 <div class="flower-detail" style="margin-top: 10px;">
-                                    <h6 class="media-heading">{{item.name}}</h3>
-                                    <h6 class="media-heading">¥{{item.value | number}}</h3>
+                                    <h6 class="media-heading">{{item.name}}</h6>
+                                    <h6 class="media-heading">¥{{item.value | number}}</h6>
                                 </div>
                             </a>
                         </li>
@@ -60,11 +60,12 @@
         </div>
       </div>
    </div>
+   <span ng-controller="LineButtonCtrl"></span>
     <!-- ベスト新着 鉢物 -->
    <div class="list-group text-center">
       <div class="list-group-item list-group-item-home media">
         <div class="text-section ">
-          <div>
+          <div class="section-title">
             <i class="fa feature-icon">ベスト新着 鉢物 </i>
           </div>
           <div class="all-select">
@@ -91,7 +92,7 @@
    <div class="list-group text-center">
       <div class="list-group-item list-group-item-home media">
         <div class="text-section ">
-          <div>
+          <div class="section-title">
             <i class="fa feature-icon">ベスト新着 観葉植物 </i>
           </div>
           <div class="all-select">
@@ -119,7 +120,7 @@
    <div class="list-group text-center">
       <div class="list-group-item list-group-item-home media">
         <div class="text-section ">
-          <div>
+          <div class="section-title">
             <i class="fa feature-icon">ベスト新着 切り花 </i>
           </div>
           <div class="all-select">
