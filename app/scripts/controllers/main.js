@@ -73,6 +73,36 @@ angular.module('vagrantApp')
               url   : '/#/product/1',
           },
           {
+              image : 'https://www.flowers-do.jp/imgdb/item_baranohanataba/107-1.jpg',
+              name  : 'バラ尽くし',
+              value : 3980,
+              url   : '/#/product/1',
+          },
+          {
+              image : 'https://www.flowers-do.jp/imgdb/item_baranohanataba/107-1.jpg',
+              name  : 'バラ尽くし',
+              value : 3980,
+              url   : '/#/product/1',
+          },
+          {
+              image : 'https://www.flowers-do.jp/imgdb/item_baranohanataba/107-1.jpg',
+              name  : 'バラ尽くし',
+              value : 3980,
+              url   : '/#/product/1',
+          },
+          {
+              image : 'https://www.flowers-do.jp/imgdb/item_baranohanataba/107-1.jpg',
+              name  : 'バラ尽くし',
+              value : 3980,
+              url   : '/#/product/1',
+          },
+          {
+              image : 'https://www.flowers-do.jp/imgdb/item_baranohanataba/107-1.jpg',
+              name  : 'バラ尽くし',
+              value : 3980,
+              url   : '/#/product/1',
+          },
+          {
               image : 'http://ar-flower.com/wp-content/uploads/2014/10/a43d3055896b8d57b3f48073d8dc2a09.jpg',
               name : '愛する人へ',
               value : 5980,
