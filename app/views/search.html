@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<div ui-content-for="title">
+  <span>検索</span>
+</div>
+<div class="scrollable">
+    <div class="scrollable-content" style="margin-top: 50px;" ng-controller="SearchGetData">
+        <div class="input-group" style="padding: 10px;">
+            <input type="text" class="form-control" ng-model="keyword"placeholder="キーワード">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">検索</button>
+            </span>
+        </div>
+        <div class="panel panel-default">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>商品名</th>
+                    <th>説明</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="user in users | filter:keyword">
+                    <td>{{user.name}}</td>
+                    <td>{{user.note}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

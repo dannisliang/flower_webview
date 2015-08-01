@@ -68,6 +68,11 @@ angular
       .when('/modal1', {
         templateUrl: 'views/modal1.html',
       })
+      .when('/search', {
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl',
+        controllerAs: 'search'
+      })
       .otherwise({
         redirectTo: '/'
       });
