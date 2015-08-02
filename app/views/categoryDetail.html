@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="styles/product.css">
+<div ui-content-for="title">
+  <span>新着花束一覧</span>
+</div>
+<div class="scrollable">
+    <div class="scrollable-content">
+<!--      <div class="list-group" ng-controller="UserInfoCtrl">-->
+    <div class="scrollable-content" ng-controller="SelectProductCtrl">
+        <div class="list-group text-center">
+            <div class="list-group-item list-group-item-home media">
+                <div class="media-body" style="margin-top: 50px;">
+                    <div class="flower-item">
+                        <!-- 画像① -->
+                        <div id="flower-detail-img">
+                            <img class="radius" ng-src="{{product_info.icon_image}}">
+                        </div>
+                        
+                        <div id="flower-detail-top">
+                            <!--Todo 3点リーダーにする-->
+                            <div style="font-size: 15px; height: 0px;" class="media-heading detail-top-left">{{ product_info.name }}</div>
+                            <div style="font-size: 12px; height: 20px;" class="media-heading detail-top-left">販売元 {{ product_info.supplier }}</div>
+                            <div class="media-heading detail-top-right">
+                                <a href=""
+                                    ui-turn-on="modal1"
+                                    class="btn btn-primary" detail-top-right>
+                                    説明
+                                    ¥{{product_info.value | number}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

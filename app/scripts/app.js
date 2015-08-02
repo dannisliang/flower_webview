@@ -73,6 +73,11 @@ angular
         controller: 'SearchCtrl',
         controllerAs: 'search'
       })
+      .when('/categoryDetail/:category_id', {
+        templateUrl: 'views/categoryDetail.html',
+        controller: 'CategoryDetailCtrl',
+        controllerAs: 'categoryDetail'
+      })
       .otherwise({
         redirectTo: '/'
       });
